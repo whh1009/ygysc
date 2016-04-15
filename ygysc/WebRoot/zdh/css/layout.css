@@ -1,0 +1,36 @@
+﻿/* CSS Document */
+ul,li{ list-style:none; margin:0; padding:0}
+p{ margin:0}
+.font_title{ font-size:36px;}
+.font_content{ font-size:30px;}
+.font_memo{ font-size:24px;}
+a{ color:#000}
+a:hover{ color:#000;text-decoration:none}
+.float_l{ float:left}
+.float_r{ float:right}
+body{ font-family:"微软雅黑","宋体";}
+/*首页*/
+.warp{ width:100%;}
+.h_tit{ height:40px; background:#eb6909; line-height:40px; font-size:18px; padding-left:26px; color:#FFF}
+.info{ width:85%; margin:0 auto; padding:10px 0}
+.info table{ line-height:42px;}
+.info tr td:nth-child(1){ font-size:16px;}
+.info tr td:nth-child(1) b{ color:#eb6909}
+.info_inp input,.info_inp select{ width:90%; height:30px; line-height:30px; border-radius:5px; border:1px solid #999; font-size:16px;}
+.info_inp1 input[type="radio"]{ vertical-align: middle; margin: 0}
+.info_inp1{ font-size:16px;}
+.info_inp .change_btn{ width:88%; background:#ff8025; height:36px; line-height:36px; color:#FFF; text-align:center; font-size:18px; border-radius:5px; overflow:hidden; border:none}
+.back_btn{ width: 32%; margin: 42% auto 0}
+.tell_num{ width: 53%; margin: 76% auto 0; font-size: 50px; color: #eb6909; text-shadow: #fff 0 3px 0; text-align: center;}
+.tell_btn{ width: 50%; margin:8% auto 0}
+/*适配小于320px*/
+@media only screen and (max-width: 320px){
+.logo img{ margin-top:0px;}
+.img_p{ margin-top:20px;}
+.title{ margin-top:30px;}
+.title1{ margin-top:20px;}
+}
+
+@media only screen and (max-width:375px){
+	
+}

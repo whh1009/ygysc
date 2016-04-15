@@ -1,0 +1,26 @@
+.shaixuan {
+  height: 40px;
+  line-height: 40px;
+  background: #EB6909;
+}
+.shaixuan li {
+  float: left;
+  width: 22%;
+  border-right: 1px solid #F37719;
+  color: #fff;
+}
+.shaixuan li span {
+  display: block;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  background: url("../images/ico-down.png") no-repeat 90% center;
+}
+.shaixuan li:last-child {
+  width: 12%;
+}
+.shaixuan .search {
+  width: 100%;
+  height: 40px;
+  background: url("../images/ico-search.png") no-repeat center;
+}

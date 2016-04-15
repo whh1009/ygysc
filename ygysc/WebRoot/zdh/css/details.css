@@ -1,0 +1,139 @@
+.adv {
+  width: 100%;
+  min-height: 180px;
+  background-color: rgba(244, 244, 244, 0.9);
+  overflow: hidden;
+  position: relative;
+}
+.adv img {
+  width: 100%;
+  height: auto;
+}
+.swiper-pagination-bullet-active {
+  background: #F06807 !important;
+}
+.details {
+  position: relative;
+  padding: 15px;
+  border-bottom: 1px solid #E9E9E9;
+  height: 100px;
+}
+.details h3 {
+  font-weight: bold;
+  font-size: 16px;
+  padding-right: 50px;
+}
+.details .price {
+  color: #E87927;
+  font-weight: bold;
+}
+.details .price .num {
+  font-size: 18px;
+}
+.details .rz {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  background: url("../images/ico-renzheng.png") no-repeat center;
+  background-size: contain;
+}
+.details .tel {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: 50px;
+  right: 7px;
+  background: url("../images/ico-tel2.png") no-repeat center;
+  background-size: contain;
+}
+.des {
+  background: #F5F5F5;
+  padding:15px 15px 50px;
+  width: 100%;
+  border-bottom: 1px solid #E9E9E9;
+}
+.des td {
+  width: 50%;
+  padding: 3px;
+}
+
+.btnlist {
+  padding: 10px 0;
+  overflow: hidden;
+  border-bottom: 1px solid #E9E9E9;
+}
+
+.btnlist div {
+  border: solid 1px #ed7d29;
+  width: 100px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 3px;
+  text-align: center;
+  color: #ed7d29;
+}
+/*
+
+
+.btnlist div:first-child {
+  float: left;
+  margin-left: 20%;
+}
+.btnlist div:last-child {
+  float: right;
+  margin-right: 20%;
+}
+*/
+.tip {
+  background: #F5F5F5;
+  padding: 10px 15px 20px;
+  position: relative;
+  margin-bottom: 50px;
+}
+.tip .tip-line {
+  width: 100%;
+  border-top: solid 1px #CCCCCC;
+  height: 1px;
+  margin-top: 10px;
+  height: 20px;
+}
+.tip .tip-word {
+  font-size: 14px;
+  z-index: 2;
+  width: 160px;
+  height: 25px;
+  position: absolute;
+  left: 50%;
+  margin-left: -80px;
+  top: 10px;
+  text-align: center;
+  background: #F5F5F5;
+  color: #757575;
+}
+.bottom {
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 35px;
+  line-height: 24px;
+  border-top: 1px solid #D0D0D0;
+  max-width: 640px;
+  display: table;
+  padding-left: 5px;
+}
+.bottom .info,
+.bottom .btn {
+  display: table-cell;
+}
+.bottom .btn {
+  width: 100px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  background: #FF8025;
+  height: 100%;
+  vertical-align: middle;
+}

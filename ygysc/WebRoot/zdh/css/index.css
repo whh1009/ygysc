@@ -1,0 +1,47 @@
+body {
+  background: #F5F5F5;
+}
+.adv {
+  width: 100%;
+  min-height: 180px;
+  background-color: rgba(244, 244, 244, 0.9);
+  overflow: hidden;
+  position: relative;
+}
+.adv img {
+  width: 100%;
+  height: auto;
+}
+.swiper-pagination-bullet-active {
+  background: #F06807 !important;
+}
+.adv-logo {
+  height: 50px;
+  background: #eb6909 url("../images/logo-adv.png") no-repeat center;
+}
+.floor-body {
+  padding: 5px;
+}
+.floor-body .block {
+  width: 50%;
+  padding: 5px;
+  display: table-cell;
+}
+.floor-body .block img {
+  width: 100%;
+  height: auto;
+}
+.floor-body .min-block {
+  width: 33.3%;
+  padding: 5px;
+  display: table-cell;
+}
+.floor-body .min-block img {
+  width: 100%;
+  height: auto;
+}
+.logo img {
+  float: right;
+  width: 150px;
+  height: auto;
+}
