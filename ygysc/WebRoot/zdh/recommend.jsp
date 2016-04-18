@@ -84,7 +84,7 @@
                     </span>
 				</li>
 				<li>
-					<div class="search" onclick="carseach();"></div>
+					<div class="search" onclick="carseach(1);"></div>
 				</li>
 			</ul>
 		</div>
