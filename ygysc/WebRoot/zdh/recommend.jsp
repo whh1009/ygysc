@@ -135,7 +135,6 @@ function carseach(page){
 					$(".last_page").hide();
 				}
 				var htmlcar = '';
-				//$("#floor-body").html("");
 				for(var i=0;i<data.list.length;i++){
 					htmlcar = '<a href='+PATH+'/api/getCarInfo?vhclId='+data.list[i].vhclId+'><div class="goods-line" ><div class="goods-img"><img src="'+data.list[i].vhclPic+'" alt=""></div>';
 					htmlcar += '<div class="goods-des"><h3>'+data.list[i].modelName+'</h3><p><span class="price">￥<span class="num">'+data.list[i].displayPrice+'</span>元</span><i class="tip-car"></i><i class="tip-pai"></i><div class="clear"></div>';
