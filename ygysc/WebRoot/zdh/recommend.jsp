@@ -84,7 +84,7 @@
                     </span>
 				</li>
 				<li>
-					<div class="search" onclick="carseach(1);"></div>
+					<div class="search" onclick="carseach(1, true);"></div>
 				</li>
 			</ul>
 		</div>
@@ -92,7 +92,7 @@
 		<div class="floor-body" id="floor-body">
 		</div>
 		
-		<div class="more_page" onclick="carseach(pageNumber)" style="display: none;">点击加载更多</div>
+		<div class="more_page" onclick="nextPage()" style="display: none;">点击加载更多</div>
         <div class="last_page" style="display: none;">已经是最后一页了</div>
 		<div class="bottom" style="display:none">
 			<div class="info">经销商：上海XXXX</div>
@@ -110,8 +110,12 @@
 </body>
 <script>
 var pageNumber = 1;
-function carseach(page){
-	
+function carseach(page, arg){
+	if(arg==true) {
+		console.log("clear");
+		$("#floor-body").html("");
+	}
+	pageNumber = page;
 	var seriesId = $("#saleModel").val();
 	var carPrice = $("#carPrice").val();
 	var carSex = $("#carSex").val();
@@ -125,12 +129,11 @@ function carseach(page){
 			if(data==null||data==undefined||data.length<1){
 				alert("暂无数据");
 			}else{
-				//console.log(data);
-				if(page>=data.totalPage || data.totalRow <=30) {
+				console.log(data);
+				if(data.lastPage) {
 					$(".last_page").show();
 					$(".more_page").hide();
-            		return;
-				}else{
+				} else {
 					$(".more_page").show();
 					$(".last_page").hide();
 				}
@@ -141,13 +144,17 @@ function carseach(page){
 					htmlcar += '</p><div class="goods-tips"><div class="one-tip">'+data.list[i].productYear+'</div><div class="one-tip">'+data.list[i].tableShowMileage+'公里</div><div class="one-tip">'+repAddr(data.list[i].vhclAddrProv)+'</div></div></div></div></a>'; 
 					$("#floor-body").append(htmlcar);
 				}
-				pageNumber++;
 			}
 		}
 	});
 }
 $(function (){
-	carseach(1);
+	carseach(1, true);
 });
+
+function nextPage() {
+	pageNumber++;
+	carseach(pageNumber, false);
+}
 </script>
 </html>

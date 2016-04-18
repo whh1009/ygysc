@@ -61,8 +61,8 @@ public class VhclModel extends Model<VhclModel> {
 	 * @return
 	 */
 	public Page<Record> getStarCarList(int pageNumber, String sqlCondition) {
-		log.warn("sql：select v.vhclId, v.modelName, v.displayPrice, v.productYear, v.tableShowMileage, v.vhclRegProv, v.vhclAddrProv, p.picType,p.vhclPic from Vhcl v, Pic p where v.vhclId=p.vhclId "+sqlCondition+" group by v.vhclId order by v.vhclId ");
-		return Db.paginate(pageNumber, Constrant.PAGE_SIZE, "select v.vhclId, v.modelName, v.displayPrice, v.productYear, v.tableShowMileage, v.vhclRegProv, v.vhclAddrProv, p.picType,p.vhclPic ", " from Vhcl v, Pic p where v.vhclId=p.vhclId "+sqlCondition+" group by v.vhclId order by v.vhclId ");
+		log.warn("明星车源列表sql：select v.vhclId, v.modelName, v.displayPrice, v.productYear, v.tableShowMileage, v.vhclRegProv, v.vhclAddrProv, p.picType,p.vhclPic from Vhcl v, Pic p where v.vhclId=p.vhclId  and p.picType = (select min(picType) from Pic sp where sp.vhclId = v.vhclId)"+sqlCondition+" order by v.vhclId ");
+		return Db.paginate(pageNumber, Constrant.PAGE_SIZE, "select v.vhclId, v.modelName, v.displayPrice, v.productYear, v.tableShowMileage, v.vhclRegProv, v.vhclAddrProv, p.picType,p.vhclPic ", " from Vhcl v, Pic p where v.vhclId=p.vhclId  and p.picType = (select min(picType) from Pic sp where sp.vhclId = v.vhclId)"+sqlCondition+" order by v.vhclId ");
 	}
 	
 	/**
