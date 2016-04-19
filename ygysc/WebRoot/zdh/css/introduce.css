@@ -23,7 +23,7 @@
   margin-top: 5px;
 }
 .linian {
-  background: #F5F5F5;
+  background: #fff;
   padding: 10px 15px 20px;
   position: relative;
 }
@@ -44,7 +44,7 @@
   margin-left: -40px;
   top: 8px;
   text-align: center;
-  background: #F5F5F5;
+  background: #fff;
 }
 .linian table {
   width: 100%;

@@ -31,7 +31,7 @@
 <title>品牌介绍</title>
 </head>
 <body>
-	<div id="warp">
+	<div id="warp" style="background:#fff">
     	
 		<div class="player">
 			<video src="${CONTEXT_PATH}/zdh/video/test.mp4"  controls="controls"  id="ply" style="display:none">

@@ -112,7 +112,6 @@
 var pageNumber = 1;
 function carseach(page, arg){
 	if(arg==true) {
-		console.log("clear");
 		$("#floor-body").html("");
 	}
 	pageNumber = page;
@@ -129,7 +128,6 @@ function carseach(page, arg){
 			if(data==null||data==undefined||data.length<1){
 				alert("暂无数据");
 			}else{
-				console.log(data);
 				if(data.lastPage) {
 					$(".last_page").show();
 					$(".more_page").hide();
@@ -140,8 +138,13 @@ function carseach(page, arg){
 				var htmlcar = '';
 				for(var i=0;i<data.list.length;i++){
 					htmlcar = '<a href='+PATH+'/api/getCarInfo?vhclId='+data.list[i].vhclId+'><div class="goods-line" ><div class="goods-img"><img src="'+data.list[i].vhclPic+'" alt=""></div>';
-					htmlcar += '<div class="goods-des"><h3>'+data.list[i].modelName+'</h3><p><span class="price">￥<span class="num">'+data.list[i].displayPrice+'</span>元</span><i class="tip-car"></i><i class="tip-pai"></i><div class="clear"></div>';
-					htmlcar += '</p><div class="goods-tips"><div class="one-tip">'+data.list[i].productYear+'</div><div class="one-tip">'+data.list[i].tableShowMileage+'公里</div><div class="one-tip">'+repAddr(data.list[i].vhclAddrProv)+'</div></div></div></div></a>'; 
+					htmlcar += '<div class="goods-des"><h3>'+data.list[i].modelName+'</h3><p><span class="price">￥<span class="num">'+data.list[i].displayPrice+'</span>元</span>';
+					if(data.list[i].authNo==undefined||data.list[i].authNo==null||data.list[i].authNo=="") {
+						htmlcar+="";
+					} else {
+						htmlcar += '<i class="tip-car"></i><i class="tip-pai"></i>';
+					}
+					htmlcar += '<div class="clear"></div></p><div class="goods-tips"><div class="one-tip">'+data.list[i].productYear+'</div><div class="one-tip">'+data.list[i].tableShowMileage+'公里</div><div class="one-tip">'+repAddr(data.list[i].vhclAddrProv)+'</div></div></div></div></a>'; 
 					$("#floor-body").append(htmlcar);
 				}
 			}
