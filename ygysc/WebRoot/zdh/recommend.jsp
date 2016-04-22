@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="${CONTEXT_PATH}/zdh/css/recommend.css?version=1.0.0">
 	<style type="text/css">
         .last_page,.more_page{ text-align: center; font-size: 14px; line-height: 40px; height: 40px; color: #000000; clear: both;}
-    	.floor-body{ padding-bottom: 0px;}	
+    	.floor-body{ padding-bottom: 0px;}    	
 	</style>
 	<script>
     	var PATH="${CONTEXT_PATH}";
@@ -93,7 +93,7 @@
 		</div>
 		
 		<div class="more_page" onclick="nextPage()" style="display: none;">点击加载更多</div>
-        <div class="last_page" style="display: none;">已经是最后一页了</div>
+		<div class="last_page" style="display: none;">已经是最后一页了</div>
 		<div class="bottom" style="display:none">
 			<div class="info">经销商：上海XXXX</div>
 			<div class="btn-pst">
@@ -128,7 +128,12 @@ function carseach(page, arg){
 			if(data==null||data==undefined||data.length<1){
 				alert("暂无数据");
 			}else{
-				if(data.lastPage) {
+				if(arg==true&&data.totalRow<1) {
+					$(".last_page").html("对不起，目前暂无符合您需求的车型，建议您扩大选择范围，感谢！");
+				} else {
+					$(".last_page").html("已经是最后一页了");
+				}
+				if(data.totalPage<=pageNumber) {
 					$(".last_page").show();
 					$(".more_page").hide();
 				} else {

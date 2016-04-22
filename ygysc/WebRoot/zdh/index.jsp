@@ -77,9 +77,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="logo">
-			<img src="${CONTEXT_PATH}/zdh/images/logo.png" alt="">
-		</div>
 	</div>
 	
 </body>
