@@ -151,7 +151,40 @@ public class CarSourceController extends BaseController {
 	public void deleteCar() {
 		log.warn("come CarSourceController##deleteCar()");
 		Result r = new Result();
-		String vhclId = StringUtil.ObjectToString(getPara("vhclId"));
+		String accessToken = StringUtil.ObjectToString(getPara("accessToken"));
+		if ("".equals(accessToken)) {
+			log.warn("CarSourceController##deleteCar()##Could not get accessToken");
+			r.setStatus(false);
+			r.setMessage("未获取到accessToken");
+			renderJson(r);
+			return;
+		} else if (!Constrant.ACCESSTOKEN.equals(accessToken)) {
+			log.warn("CarSourceController##deleteCar()##accessToken is not correct");
+			r.setStatus(false);
+			r.setMessage("accessToken验证失败");
+			renderJson(r);
+			return;
+		}
+		String data = StringUtil.ObjectToString(getPara("data"));
+		if ("".equals(data)) {
+			log.warn("CarSourceController##deleteCar()##Could not get data");
+			r.setStatus(false);
+			r.setMessage("未获取到data");
+			renderJson(r);
+			return;
+		}
+		JSONObject obj = null;
+		try {
+			obj = JSON.parseObject(data);
+		} catch (Exception e) {
+			log.error("CarSourceController##deleteCar()##" + StringUtil.getTrace(e));
+			r.setStatus(false);
+			r.setMessage(e.getMessage());
+			renderJson(r);
+			return;
+		}
+		String vhclId = StringUtil.ObjectToString(obj.get("vhclId"));
+//		String vhclId = StringUtil.ObjectToString(getPara("vhclId"));
 		if ("".equals(vhclId)) { // 没有获取到id，则返回
 			log.warn("CarSourceController##deleteCar()##Could not get vhclId");
 			r.setStatus(false);
